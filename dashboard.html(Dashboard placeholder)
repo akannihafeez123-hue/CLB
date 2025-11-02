@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CLB Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>CLB Dashboard</h1>
+  <p>Modules and automation placeholders coming soon...</p>
+  <script src="dashboard.js"></script>
+</body>
+</html>
