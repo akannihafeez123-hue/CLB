@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CLB Secret Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>CLB Secret Access</h1>
+  <form id="signupForm">
+    <input type="text" id="username" placeholder="Username" required />
+    <input type="text" id="inviteKey" placeholder="Invite Key" required />
+    <button type="submit">Sign Up</button>
+  </form>
+
+  <script>
+    const form = document.getElementById('signupForm');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const inviteKey = document.getElementById('inviteKey').value;
+
+      const res = await fetch('/auth/signup', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({ username, inviteKey })
+      });
+      const data = await res.json();
+      alert('Signup Success! Token: ' + data.token);
+    });
+  </script>
+</body>
+</html>
